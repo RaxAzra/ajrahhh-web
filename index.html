@@ -177,9 +177,77 @@
       color: #666;
       padding-bottom: 20px;
     }
+    
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(12px);
+      background-color: rgba(6, 6, 6, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      flex-direction: column;
+    }
+
+    .loader-content {
+      text-align: center;
+    }
+
+    .loader-logo {
+      width: 80px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: dropIn 0.8s ease forwards;
+    }
+
+    .loader-text {
+      font-size: 24px;
+      margin-top: 10px;
+      opacity: 0;
+      animation: showText 0.8s ease 1s forwards;
+    }
+
+    @keyframes dropIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes showText {
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <img src="https://files.catbox.moe/l9lggg.png" alt="Logo" class="loader-logo">
+      <div class="loader-text" id="loader-text">Hello 👏🏻</div>
+    </div>
+  </div>
 
   <div class="top-gif">
     <video autoplay muted loop playsinline>
@@ -239,5 +307,27 @@
     document.addEventListener('copy', e => e.preventDefault());
   </script>
 
+  <script>
+    const loader = document.getElementById("loader");
+    const loaderText = document.getElementById("loader-text");
+    const dots = [" ", ".", "..", "...", "..", "."];
+    let index = 0;
+
+    setTimeout(() => {
+      loaderText.textContent = "Loading" + dots[index];
+      setInterval(() => {
+        loaderText.textContent = "Loading " + dots[index];
+        index = (index + 1) % dots.length;
+      }, 500);
+    }, 3000);
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease";
+        setTimeout(() => loader.style.display = "none", 1000);
+      }, 4000);
+    });
+  </script>
 </body>
 </html>
