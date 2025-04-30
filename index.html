@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Sora Senpai</title>
+  <link rel="icon" href="https://files.catbox.moe/l9lggg.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #060606;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .top-gif {
+      width: 100%;
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-gif video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile {
+      text-align: center;
+      margin-top: -55px;
+      z-index: 2;
+    }
+
+    .profile img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 2px solid #888;
+      object-fit: cover;
+      background-color: #1c1c1e;
+    }
+
+    .profile h1 {
+      font-size: 22px;
+      margin: 15px 0 5px;
+      color: #fefefe;
+    }
+
+    .profile p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .social-links img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-links a:hover img {
+      transform: scale(1.15);
+    }
+
+    .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    padding: 0 20px;
+  }
+
+  .badges a {
+    text-decoration: none;
+  }
+
+  .badges span {
+  padding: 6px 12px;
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  border-radius: 999px;
+  color: #fff;
+  background-color: transparent;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.1);
+  font-weight: 500;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, border-color 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.badges span:hover {
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  border-color: rgba(255, 215, 0, 0.8);
+}
+
+  .badges span:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 4px rgba(255, 215, 0, 0.4);
+  }
+  
+  links {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+  .links a {
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 0;
+  border-radius: 999px;
+  font-weight: 500;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.1);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.3;
+}
+
+.links a:hover {
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.links a .button-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.links a .button-sub {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+    .footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #666;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-gif">
+    <video autoplay muted loop playsinline>
+      <source src="https://files.catbox.moe/80owxc.webm" type="video/webm">
+    </video>
+  </div>
+
+  <div class="profile">
+    <img src="https://files.catbox.moe/s19k5h.jpg" alt="profile" loading="lazy">
+    <h1>Sora Senpai</h1>
+    <p>Hi, im a creator from Indonesia </p>
+  </div>
+
+  <div class="social-links">
+  <a href="https://instagram.com/ajrah_kunnz" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=FFFFFF" alt="Instagram">
+  </a>
+  <a href="https://www.threads.net/@ajrah_kunnz" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=ikThuZ5WmSYz&format=png&color=FFFFFF" alt="Threads">
+  </a>
+  <a href="https://tiktok.com/@sorawangyy" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=vXmXtbBOhqh2&format=png&color=FFFFFF" alt="TikTok">
+  </a>
+  <a href="https://twitter.com/ajrah_kunnz" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=fJp7hepMryiw&format=png&color=FFFFFF" alt="Twitter">
+  </a>
+  <a href="https://youtube.com/@sorawangyy" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=37325&format=png&color=FFFFFF" alt="YouTube">
+  </a>
+  </div>
+
+  <div class="badges">
+   <a href="https://myanimelist.net" target="_blank"><span>Anime </span></a>
+   <a href="https://mangadex.org" target="_blank"><span>Manga </span></a>
+   <a href="https://youtube.com/@sorawangyy" target="_blank"><span>Editing </span></a>
+  </div>
+
+<div class="links">
+  <a href="https://wa.me/6285834118698?text=kak,+mau+order+am+prem+sora">
+    <span class="button-title">#1 | Order Alight Motion Premium</span>
+    <span class="button-sub">INDO : 10 - 20K / Tahun | MALAY : RM 8 / Tahun</span>
+  </a>
+  <a href="https://wa.me/6283867612915?text=kak,+mau+order+am+prem+sora">
+    <span class="button-title">#2 | Order Alight Motion Premium</span>
+    <span class="button-sub">INDO : 10 - 20K / Tahun | MALAY : RM 3 - 5 / Tahun</span>
+  </a>
+  <a href="https://wa.me/6283133804109?text=kak,+mau+order+am+prem+sora">
+    <span class="button-title">#3 | Order Alight Motion Premium</span>
+    <span class="button-sub">INDO : 10 - 20K / Tahun | MALAY : RM 5 - 10 / Tahun</span>
+  </a>
+  <a href="https://wa.me/6283133804109?text=kak,+mau+order+cc+pro+sora">
+    <span class="button-title">Order CapCut PRO ( Premium )</span>
+    <span class="button-sub">SHARED : 25K / Bulan | PRIVATE : 45K / Bulan</span>
+  </a>
+</div>
+
+  <div class="footer">� 2025 | Sora Senpai. All rights reserved</div>
+
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('copy', e => e.preventDefault());
+  </script>
+  
+</body>
+</html>
