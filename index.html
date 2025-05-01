@@ -245,7 +245,7 @@
   <div class="loader" id="loader">
     <div class="loader-content">
       <img src="https://files.catbox.moe/l9lggg.png" alt="Logo" class="loader-logo">
-      <div class="loader-text" id="loader-text">Hello 👏🏻</div>
+      <div class="loader-text" id="loader-text">Halo kak 👏🏻</div>
     </div>
   </div>
 
@@ -263,7 +263,7 @@
         <path d="M22.5 12l-2.598-2.25.293-3.45-3.416-.72L15 2.25 12 4.125 9 2.25l-1.779 3.33-3.416.72.293 3.45L2.5 12l2.598 2.25-.293 3.45 3.416.72L9 21.75l3-1.875 3 1.875 1.779-3.33 3.416-.72-.293-3.45L22.5 12zm-12 3.75l-3-3 1.41-1.41L10.5 13.17l4.59-4.59L16.5 10.5l-6 5.25z"/>
       </svg>
     </h1>
-    <p>Hii, im a creator from Indonesia 👏🏻</p>
+    <p>Hi, im a creator from Indonesia 👏🏻</p>
   </div>
 
   <div class="social-links">
@@ -314,19 +314,17 @@
     let index = 0;
 
     setTimeout(() => {
-      loaderText.textContent = "Loading" + dots[index];
+      loaderText.textContent = "Memuat" + dots[index];
       setInterval(() => {
-        loaderText.textContent = "Loading " + dots[index];
+        loaderText.textContent = "Memuat " + dots[index];
         index = (index + 1) % dots.length;
       }, 500);
     }, 3000);
 
     window.addEventListener("load", () => {
-      setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.transition = "opacity 0.5s ease";
-        setTimeout(() => loader.style.display = "none", 1000);
-      }, 5000);
+      loader.style.opacity = "0";
+      loader.style.transition = "opacity 0.5s ease";
+      setTimeout(() => loader.style.display = "none", 500);
     });
   </script>
 </body>
