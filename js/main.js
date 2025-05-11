@@ -1,5 +1,10 @@
-const sections = ['profile', 'social', 'badges', 'links', 'footer'];
+fetch('/components/header.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('header-placeholder').outerHTML = html;
+  });
 
+const sections = ['profile', 'social', 'badges', 'links', 'footer'];
 sections.forEach(id => {
   fetch(`/components/${id}.html`)
     .then(res => res.text())
@@ -24,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dots = [' ', '.', '..', '...', '..', '.'];
   let index = 0;
-
   setTimeout(() => {
     loaderText.textContent = "Loading" + dots[index];
     setInterval(() => {
