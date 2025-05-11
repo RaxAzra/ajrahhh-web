@@ -5,7 +5,7 @@
     fetch('components/profile.html')
     .then(res => res.text())
     .then(data => {
-      document.body.insertAdjacentHTML('beforebegin', data);
+      document.body.insertAdjacentHTML('beforeend', data);
     });
   </script>
 </head>
