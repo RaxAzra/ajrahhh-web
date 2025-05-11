@@ -70,12 +70,14 @@
   </div>
 
   <script>
-  fetch('components/links.html')
+    fetch('components/links.html')
     .then(res => res.text())
     .then(data => {
       document.body.insertAdjacentHTML('links', data);
     });
-
+  </script>
+  
+  <script>
   fetch('components/footer.html')
     .then(res => res.text())
     .then(data => {
