@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-
   <title>Sora Senpai 💕</title>
 
   <link rel="icon" href="https://ajrahhh.my.id/image/icon.png" type="image/png">
@@ -16,140 +13,67 @@
   <meta property="og:description" content="~ can me? 💕">
   <meta property="og:image" content="https://ajrahhh.my.id/image/icon.png">
   <meta property="og:url" content="https://ajrahhh.my.id">
-  
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sora Senpai :3">
   <meta name="twitter:description" content="~ can me? 💕">
   <meta name="twitter:image" content="https://ajrahhh.my.id/image/icon.png">
 
-  <link rel="stylesheet" href="style/style.css"
-
+  <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
 
-
-
-  <script>
-
-    fetch('components/profile.html')
-
-    .then(res => res.text())
-
-    .then(data => {
-
-      document.body.insertAdjacentHTML('beforeend', data);
-
-    });
-
-  </script>
-
-
-
   <div id="preloader">
-
     <div class="loader-text"></div>
-
   </div>
 
-
-
+  <script src="js/greeting.js"></script>
   <script>
+    async function loadComponentsInOrder() {
+      const order = [
+        'components/profile.html',
+        'components/social.html',
+        'components/badges.html',
+        'components/links.html',
+        'components/footer.html'
+      ];
+      for (let url of order) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.body.insertAdjacentHTML('beforeend', html);
+      }
+    }
 
-    fetch('components/social.html')
+    loadComponentsInOrder();
 
-    .then(res => res.text())
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("selectstart", e => e.preventDefault());
+    document.addEventListener("copy", e => e.preventDefault());
 
-    .then(data => {
+    const loader = document.getElementById("preloader"),
+          loaderText = document.querySelector(".loader-text");
 
-      document.body.insertAdjacentHTML('beforeend', data);
+    loaderText.textContent = getGreeting();
 
-    });
-
-  </script>
-
-
-
-  <script>
-
-    fetch('components/badges.html')
-
-    .then(res => res.text())
-
-    .then(data => {
-
-      document.body.insertAdjacentHTML('beforeend', data);
-
-    });
-
-  </script>
-
-  
-
-  <script>
-
-    fetch('components/links.html')
-
-    .then(res => res.text())
-
-    .then(data => {
-
-      document.body.insertAdjacentHTML('beforeend', data);
-
-    });
-
-  </script>
-
-  
-
-  <script>
-
-  fetch('components/footer.html')
-
-    .then(res => res.text())
-
-    .then(data => {
-
-      document.body.insertAdjacentHTML('beforeend', data);
-
-    });
-
-  </script>
-
-
-
-  <!-- Tambahkan ini sebelum script utama, bisa di bawah <body> -->
-<script src="js/greeting.js"></script>
-
-<script>
-  document.addEventListener("contextmenu", e => e.preventDefault());
-  document.addEventListener("selectstart", e => e.preventDefault());
-  document.addEventListener("copy", e => e.preventDefault());
-
-  const loader = document.getElementById("preloader"),
-        loaderText = document.querySelector(".loader-text");
-
-  loaderText.textContent = getGreeting();
-
-  const dots = [" ", ".", "..", "...", "..", "."];
-  setTimeout(() => {
-    let t = 0;
-    setInterval(() => {
-      loaderText.textContent = "Loading " + dots[t];
-      t = (t + 1) % dots.length;
-    }, 500);
-  }, 3000);
-
-  window.addEventListener("load", () => {
+    const dots = [" ", ".", "..", "...", "..", "."];
     setTimeout(() => {
-      loader.style.opacity = "0";
-      loader.style.transition = "opacity 0.5s ease";
-      setTimeout(() => {
-        loader.style.display = "none";
+      let t = 0;
+      setInterval(() => {
+        loaderText.textContent = "Loading " + dots[t];
+        t = (t + 1) % dots.length;
       }, 500);
-    }, 1000);
-  });
-</script>
+    }, 3000);
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }, 1000);
+    });
+  </script>
 
 </body>
 </html>
