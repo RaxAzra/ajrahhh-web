@@ -131,22 +131,7 @@
     document.addEventListener("copy", e => e.preventDefault());
 
 
-
-    function getGreeting() {
-
-      const e = new Date().getHours();
-
-      return e >= 4 && e < 10 ? "Good morning 👏🏻" :
-
-             e >= 10 && e < 15 ? "Good afternoon 👏🏻" :
-
-             e >= 15 && e < 18 ? "Good evening 👏🏻" :
-
-             "Good night 👏🏻";
-
-    }
-
-
+    <script src="js/greeting.js"></script>
 
     const loader = document.getElementById("preloader"),
 
