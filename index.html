@@ -109,11 +109,11 @@
         document.getElementById('social-container').innerHTML = data;
       });
 
-    fetch('components/badges.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('badges-container').innerHTML = data;
-      });
+    fetch('components/badges.html?v=' + new Date().getTime())
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('badges-container').innerHTML = data;
+  });
   </script>
 </body>
 </html>
