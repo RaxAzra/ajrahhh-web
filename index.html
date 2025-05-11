@@ -2,10 +2,10 @@
 <html lang="id">
 <head>
   <script>
-    fetch('components/profile.html')
+    fetch('components/header.html')
     .then(res => res.text())
     .then(data => {
-      document.body.insertAdjacentHTML('beforeend', data);
+      document.body.insertAdjacentHTML('beforebegin', data);
     });
   </script>
 </head>
