@@ -71,18 +71,18 @@
 
   <script>
     fetch('components/links.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('links').innerHTML = data;
-  });
+    .then(res => res.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('beforeend', data);
+    });
   </script>
   
   <script>
   fetch('components/footer.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('footer').innerHTML = data;
-  });
+    .then(res => res.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('beforeend', data);
+    });
   </script>
 
   <script>
