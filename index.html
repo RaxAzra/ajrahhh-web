@@ -102,6 +102,18 @@
       .then(data => {
         document.getElementById('links-container').innerHTML = data;
       });
+
+    fetch('components/social.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('social-container').innerHTML = data;
+      });
+
+    fetch('components/badges.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('badges-container').innerHTML = data;
+      });
   </script>
 </body>
 </html>
