@@ -24,10 +24,6 @@
 </head>
 <body>
 
-  <div id="preloader">
-    <div class="loader-text"></div>
-  </div>
-  
   <script>
     fetch('components/profile.html')
     .then(res => res.text())
@@ -35,6 +31,10 @@
       document.body.insertAdjacentHTML('beforeend', data);
     });
   </script>
+
+  <div id="preloader">
+    <div class="loader-text"></div>
+  </div>
 
   <script>
     fetch('components/social.html')
