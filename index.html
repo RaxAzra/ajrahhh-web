@@ -12,6 +12,44 @@
 <body>
 
   <script>
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("selectstart", e => e.preventDefault());
+    document.addEventListener("copy", e => e.preventDefault());
+
+    function getGreeting() {
+      const e = new Date().getHours();
+      return e >= 4 && e < 10 ? "Good morning 👏🏻" :
+             e >= 10 && e < 15 ? "Good afternoon 👏🏻" :
+             e >= 15 && e < 18 ? "Good evening 👏🏻" :
+             "Good night 👏🏻";
+    }
+
+    const loader = document.getElementById("preloader"),
+          loaderText = document.querySelector(".loader-text");
+
+    loaderText.textContent = getGreeting();
+
+    const dots = [" ", ".", "..", "...", "..", "."];
+    setTimeout(() => {
+      let t = 0;
+      setInterval(() => {
+        loaderText.textContent = "Loading " + dots[t];
+        t = (t + 1) % dots.length;
+      }, 500);
+    }, 3000);
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }, 1000);
+    });
+  </script>
+
+  <script>
     fetch('components/profile.html')
     .then(res => res.text())
     .then(data => {
@@ -52,44 +90,6 @@
     .then(res => res.text())
     .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
-    });
-  </script>
-
-  <script>
-    document.addEventListener("contextmenu", e => e.preventDefault());
-    document.addEventListener("selectstart", e => e.preventDefault());
-    document.addEventListener("copy", e => e.preventDefault());
-
-    function getGreeting() {
-      const e = new Date().getHours();
-      return e >= 4 && e < 10 ? "Good morning 👏🏻" :
-             e >= 10 && e < 15 ? "Good afternoon 👏🏻" :
-             e >= 15 && e < 18 ? "Good evening 👏🏻" :
-             "Good night 👏🏻";
-    }
-
-    const loader = document.getElementById("preloader"),
-          loaderText = document.querySelector(".loader-text");
-
-    loaderText.textContent = getGreeting();
-
-    const dots = [" ", ".", "..", "...", "..", "."];
-    setTimeout(() => {
-      let t = 0;
-      setInterval(() => {
-        loaderText.textContent = "Loading " + dots[t];
-        t = (t + 1) % dots.length;
-      }, 500);
-    }, 3000);
-
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.transition = "opacity 0.5s ease";
-        setTimeout(() => {
-          loader.style.display = "none";
-        }, 500);
-      }, 1000);
     });
   </script>
 </body>
