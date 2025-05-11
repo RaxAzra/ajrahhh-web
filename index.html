@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <script>
-    fetch('components/header.html')
-    .then(res => res.text())
-    .then(data => {
-      document.body.insertAdjacentHTML('beforeafter', data);
-    });
-  </script>
+  <div class="header">
 </head>
 <body>
 
@@ -56,6 +50,12 @@
   </script>
 
   <script>
+    fetch('components/header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+    
     document.addEventListener("contextmenu", e => e.preventDefault());
     document.addEventListener("selectstart", e => e.preventDefault());
     document.addEventListener("copy", e => e.preventDefault());
