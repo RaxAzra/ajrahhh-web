@@ -28,6 +28,7 @@
   </div>
 
   <script src="js/greeting.js"></script>
+  <script src="js/preloader.js"></script>
   <script>
     async function loadComponentsInOrder() {
       const order = [
@@ -49,30 +50,6 @@
     document.addEventListener("contextmenu", e => e.preventDefault());
     document.addEventListener("selectstart", e => e.preventDefault());
     document.addEventListener("copy", e => e.preventDefault());
-
-    const loader = document.getElementById("preloader"),
-          loaderText = document.querySelector(".loader-text");
-
-    loaderText.textContent = getGreeting();
-
-    const dots = [" ", ".", "..", "...", "..", "."];
-    setTimeout(() => {
-      let t = 0;
-      setInterval(() => {
-        loaderText.textContent = "Loading " + dots[t];
-        t = (t + 1) % dots.length;
-      }, 500);
-    }, 3000);
-
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.transition = "opacity 0.5s ease";
-        setTimeout(() => {
-          loader.style.display = "none";
-        }, 500);
-      }, 1000);
-    });
   </script>
 
 </body>
