@@ -88,9 +88,13 @@
     </a>
   </div>
 
-  <div class="footer">
-    © 2025 | Sora Senpai. All rights reserved.
-  </div>
+  <script>
+  fetch('components/footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('beforeend', data);
+    });
+  </script>
 
   <script>
     document.addEventListener("contextmenu", e => e.preventDefault());
