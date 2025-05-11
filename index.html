@@ -69,30 +69,17 @@
     <span>Editing 🎬</span>
   </div>
 
-  <div class="links">
-    <a href="https://wa.me/6285834118698?text=kak,+mau+order+am+prem+sora">
-      <span class="button-title">#1 | Order Alight Motion Premium</span>
-      <span class="button-sub">INDO : 10 - 20K / Tahun | MALAY : RM 8 / Tahun</span>
-    </a>
-    <a href="https://wa.me/6283867612915?text=kak,+mau+order+am+prem+sora">
-      <span class="button-title">#2 | Order Alight Motion Premium</span>
-      <span class="button-sub">INDO : 10 - 20K / Tahun | MALAY : RM 3 - 5 / Tahun</span>
-    </a>
-    <a href="https://wa.me/6283133804109?text=kak,+mau+order+am+prem+sora">
-      <span class="button-title">#3 | Order Alight Motion Premium</span>
-      <span class="button-sub">INDO : 10 - 20K / Tahun | MALAY : RM 5 - 10 / Tahun</span>
-    </a>
-    <a href="https://wa.me/6283133804109?text=kak,+mau+order+cc+pro+sora">
-      <span class="button-title">Order CapCut PRO ( Premium )</span>
-      <span class="button-sub">SHARED : 25K / Bulan | PRIVATE : 45K / Bulan</span>
-    </a>
-  </div>
-
   <script>
+  fetch('components/links.html')
+    .then(res => res.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('links', data);
+    });
+
   fetch('components/footer.html')
     .then(res => res.text())
     .then(data => {
-      document.body.insertAdjacentHTML('beforeend', data);
+      document.body.insertAdjacentHTML('footer', data);
     });
   </script>
 
