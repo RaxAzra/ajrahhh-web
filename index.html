@@ -1,1 +1,128 @@
-<!doctype html><html lang=id><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Sora Senpai 💕</title><link rel=icon href=image/icon.png type=image/png><link rel=preload href=image/icon.png as=image type=image/png><meta property=og:type content=website><meta property=og:title content="Sora Senpai :3"><meta property=og:description content="~ can me? 💕"><meta property=og:image content=image/icon.png><meta property=og:url content=https://ajrahhh.my.id><meta name=twitter:card content=summary_large_image><meta name=twitter:title content="Sora Senpai :3"><meta name=twitter:description content="~ can me? 💕"><meta name=twitter:image content=image/icon.png><link rel=stylesheet href=style/style.css></head><body><div id=preloader><div class=loader-text></div></div><script src=js/greeting.js></script><script src=js/preloader.js></script><script>(()=>{let t=["contextmenu","selectstart","copy","preventDefault","addEventListener"];[t[0],t[1],t[2]].forEach((e=>{return o=t[4],n=e,void(document[o]&&document[o](n,(e=>e[t[3]]())));var o,n}))})(),(()=>{let t=["components/profile.html","components/social.html","components/badges.html","components/links.html","components/footer.html"];(async e=>{for(let e of t){let t=await fetch(e),o=await t.text();document.body.insertAdjacentHTML("beforeend",o)}})()})()</script></body></html>
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sora Senpai</title>
+  <link rel="icon" href="https://ajrahhh.my.id/image/icon.png" type="image/png">
+
+  <meta property="og:title" content="Sora Senpai">
+  <meta property="og:description" content="Click me to see my dashboard ✨">
+  <meta property="og:image" content="https://ajrahhh.my.id/image/icon.png">
+  <meta property="og:url" content="https://ajrahhh.my.id">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+
+
+  <div id="preloader">
+
+    <div class="loader-text"></div>
+
+  </div>
+
+  
+
+  <script>
+  async function loadComponents() {
+    const components = [
+      'profile.html',
+      'social.html',
+      'badges.html',
+      'links.html',
+      'footer.html'
+    ];
+
+    for (const file of components) {
+      const res = await fetch(`components/${file}`);
+      const data = await res.text();
+      document.body.insertAdjacentHTML('beforeend', data);
+    }
+  }
+
+  loadComponents();
+</script>
+
+
+  <script>
+
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    document.addEventListener("selectstart", e => e.preventDefault());
+
+    document.addEventListener("copy", e => e.preventDefault());
+
+
+
+    function getGreeting() {
+
+      const e = new Date().getHours();
+
+      return e >= 4 && e < 10 ? "Selamat Pagi 👏🏻" :
+
+             e >= 10 && e < 15 ? "Selamat Siang 👏🏻" :
+
+             e >= 15 && e < 18 ? "Selamat Sore 👏🏻" :
+
+             "Selamat Malam 👏🏻";
+
+    }
+
+
+
+    const loader = document.getElementById("preloader"),
+
+          loaderText = document.querySelector(".loader-text");
+
+
+
+    loaderText.textContent = getGreeting();
+
+
+
+    const dots = [" ", ".", "..", "...", "..", "."];
+
+    setTimeout(() => {
+
+      let t = 0;
+
+      setInterval(() => {
+
+        loaderText.textContent = "Memuat " + dots[t];
+
+        t = (t + 1) % dots.length;
+
+      }, 500);
+
+    }, 3000);
+
+
+
+    window.addEventListener("load", () => {
+
+      setTimeout(() => {
+
+        loader.style.opacity = "0";
+
+        loader.style.transition = "opacity 0.5s ease";
+
+        setTimeout(() => {
+
+          loader.style.display = "none";
+
+        }, 500);
+
+      }, 1000);
+
+    });
+
+  </script>
+
+</body>
+
+</html>
