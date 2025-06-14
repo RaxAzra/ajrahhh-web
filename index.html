@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +16,10 @@
 </head>
 <body>
 
-
-
   <div id="preloader">
-
     <div class="loader-text"></div>
-
   </div>
-
   
-
   <script>
   async function loadComponents() {
     const components = [
@@ -48,105 +40,94 @@
   loadComponents();
 </script>
 
-
   <script>
-
     document.addEventListener("contextmenu", e => e.preventDefault());
-
     document.addEventListener("selectstart", e => e.preventDefault());
-
     document.addEventListener("copy", e => e.preventDefault());
-
     
+// Cegah klik kanan
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Cegah shortcut DevTools
 document.onkeydown = function(e) {
     if (
-        e.key === "F12" || // F12
-        (e.ctrlKey && e.shiftKey && e.key === "I") || // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.key === "J") || // Ctrl+Shift+J
-        (e.ctrlKey && e.key === "U") || // Ctrl+U
-        (e.ctrlKey && e.shiftKey && e.key === "C") // Ctrl+Shift+C
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+        (e.ctrlKey && e.key === "U")
     ) {
         e.preventDefault();
         return false;
     }
 };
 
+// Deteksi DevTools
 (function() {
     const threshold = 160;
     setInterval(function() {
-        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-        if (widthThreshold || heightThreshold) {
-            document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:50px'>Akses Diblokir 🚫</h1>";
+        const devToolsOpen =
+            window.outerWidth - window.innerWidth > threshold ||
+            window.outerHeight - window.innerHeight > threshold;
+
+        if (devToolsOpen) {
+            document.body.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    backdrop-filter: blur(10px);
+                    background: rgba(0,0,0,0.5);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                ">
+                    <h1 style="
+                        color: white;
+                        font-size: 2em;
+                        text-align: center;
+                        font-family: sans-serif;
+                    ">
+                        Akses Diblokir 🚫<br>Silakan tutup Developer Tools
+                    </h1>
+                </div>
+            `;
         }
     }, 1000);
 })();
 
-
     function getGreeting() {
-
       const e = new Date().getHours();
-
       return e >= 4 && e < 10 ? "Selamat Pagi 👏🏻" :
-
              e >= 10 && e < 15 ? "Selamat Siang 👏🏻" :
-
              e >= 15 && e < 18 ? "Selamat Sore 👏🏻" :
-
-             "Selamat Malamm 👏🏻";
-
+             "Selamat Malam 👏🏻";
     }
 
-
-
     const loader = document.getElementById("preloader"),
-
           loaderText = document.querySelector(".loader-text");
-
-
 
     loaderText.textContent = getGreeting();
 
-
-
     const dots = [" ", ".", "..", "...", "..", "."];
-
     setTimeout(() => {
-
       let t = 0;
-
       setInterval(() => {
-
         loaderText.textContent = "Memuat " + dots[t];
-
         t = (t + 1) % dots.length;
-
       }, 500);
-
     }, 3000);
 
-
-
     window.addEventListener("load", () => {
-
       setTimeout(() => {
-
         loader.style.opacity = "0";
-
         loader.style.transition = "opacity 0.5s ease";
-
         setTimeout(() => {
-
           loader.style.display = "none";
-
         }, 500);
-
       }, 1000);
-
     });
-
   </script>
-
 </body>
-
 </html>
