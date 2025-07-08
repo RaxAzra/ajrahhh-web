@@ -80,7 +80,7 @@
 }
 
 .notify-btn:hover {
-  transform: scale(1.1);
+  transform: none;
 }
 
 .theme-icon {
