@@ -1,0 +1,11 @@
+.wave-outline {
+  overflow: hidden;
+  margin-top: 3rem;
+  line-height: 0;
+  position: relative;
+}
+
+.wave-loop {
+  width: 100%;
+  height: 80px;
+}

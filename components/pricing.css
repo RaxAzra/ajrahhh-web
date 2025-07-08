@@ -1,0 +1,223 @@
+.pricing-section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 2.5rem;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.pricing-grid.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 1.2rem;
+  padding: 2rem 1.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.plan-name {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.plan-price {
+  font-size: clamp(1.8rem, 4.5vw, 2rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #00ffaa;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.plan-desc {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.plan-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.plan-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: 'Satoshi', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn.confirm {
+  background: white;
+  color: black;
+}
+
+@keyframes modalFadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal.show .modal-content {
+  animation: modalFadeScale 0.2s ease-out;
+}
+
+.modal {
+  transition: opacity 0.2s ease;
+}
+
+.modal-content {
+  background: rgba(29, 29, 29, 0.12);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.modal-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.modal-content {
+  font-family: 'Santoha', sans-serif;
+}
+
+.modal-sub {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

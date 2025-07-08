@@ -1,0 +1,31 @@
+.footer-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #ccc;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+}
+
+.footer-blur .heart {
+  color: #ff4d4f;
+}
+
+.footer-container {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.footer-container .heart {
+  color: #ff5e5e;
+  animation: beat 1.4s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}

@@ -1,0 +1,124 @@
+.hero {
+  padding-top: 140px;
+  padding-bottom: 3rem;
+  text-align: center;
+  color: white;
+  scroll-margin-top: 160px;
+}
+
+.hero-content h1 {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 span {
+  color: #ffffffcc;
+  font-weight: 500;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.hero-content p {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  max-width: 560px;
+  margin: 0 auto;
+  color: #dddddd;
+}
+
+.hero-btn {
+  margin: 1rem 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem; /* ini yang dorong ke bawah */
+}
+
+.hero-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.hero-btn.alt {
+  background: rgba(255, 255, 255, 0.06);
+  color: #eee;
+}
+
+.icon-benefit,
+.icon-cart {
+  margin-top: -1px;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 4rem;
+    scroll-margin-top: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .nav-content {
+    gap: 1rem;
+  }
+
+  .nav-right a {
+    font-size: 0.85rem;
+  }
+
+  .mode-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar {
+    padding: 0.6rem 1.2rem;
+    max-width: 95%;
+  }
+}

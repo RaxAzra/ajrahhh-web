@@ -1,0 +1,118 @@
+.navbar {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: fit-content;
+  max-width: 92%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-left .logo {
+  height: 30px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.nav-right a:hover {
+  opacity: 0.75;
+}
+
+.mode-toggle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notify-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.notify-btn:hover {
+  transform: scale(1.1);
+}
+
+.theme-icon {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.8) rotate(-20deg);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.theme-icon.visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* Awal: navbar nyatu dengan hero */
+.navbar.scroll-hidden {
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: blur(0px);
+  border-color: transparent;
+  transition:
+    background 0.5s ease,
+    backdrop-filter 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* Setelah scroll: navbar muncul estetis */
+.navbar.scroll-active {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition:
+    background 0.5s ease,
+    backdrop-filter 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+body.dark-mode .navbar.scroll-hidden {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
