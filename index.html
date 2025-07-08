@@ -262,5 +262,17 @@ document.addEventListener("DOMContentLoaded", () => {
     css.href = 'style.css?v=' + timestamp;
     document.head.appendChild(css);
   </script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.querySelector('.loader');
+      if (loader) loader.style.display = 'none';
+    });
+  
+    setTimeout(() => {
+      const loader = document.querySelector('.loader');
+      if (loader) loader.style.display = 'none';
+    }, 5000);
+  </script>
 </body>
 </html>
