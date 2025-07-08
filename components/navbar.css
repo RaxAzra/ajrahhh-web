@@ -120,11 +120,18 @@
     box-shadow 0.5s ease;
 }
 
-body.dark-mode .navbar.scroll-hidden {
-  background: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
+.nav-center a, .nav-center a:visited, .nav-center a:active {
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.nav-center a:hover {
+  opacity: 0.75;
+  color: #ccc;
 }
 
 @media screen and (max-width: 768px) {
