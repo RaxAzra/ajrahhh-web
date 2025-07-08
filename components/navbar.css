@@ -83,7 +83,6 @@
   transform: scale(1) rotate(0deg);
 }
 
-/* Awal: navbar nyatu dengan hero */
 .navbar.scroll-hidden {
   background: transparent;
   box-shadow: none;
@@ -96,7 +95,6 @@
     box-shadow 0.5s ease;
 }
 
-/* Setelah scroll: navbar muncul estetis */
 .navbar.scroll-active {
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px);
@@ -115,4 +113,43 @@ body.dark-mode .navbar.scroll-hidden {
   border-color: transparent !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0.6rem 1.2rem;
+    top: 16px;
+    border-radius: 1rem;
+    width: 90%;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-left .logo {
+    height: 24px; /* lebih kecil buat HP */
+  }
+
+  .nav-right {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-right a {
+    font-size: 0.85rem;
+  }
+
+  .mode-toggle,
+  .notify-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .theme-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
