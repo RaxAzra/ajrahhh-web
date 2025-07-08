@@ -26,3 +26,7 @@ body::before {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
