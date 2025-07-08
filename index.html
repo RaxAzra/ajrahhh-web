@@ -23,9 +23,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS file -->
-  <link rel="stylesheet" href="style.css?v=1.0.0">
-
   <!-- Favicon for Browsers -->
   <link rel="icon" href="https://files.catbox.moe/gxci6m.png" type="image/x-icon" />
 </head>
@@ -256,6 +253,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     });
+  </script>
+
+  <script>
+    const timestamp = Date.now();
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'style.css?v=' + timestamp;
+    document.head.appendChild(css);
   </script>
 </body>
 </html>
