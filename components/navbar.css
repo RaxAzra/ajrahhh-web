@@ -116,3 +116,39 @@ body.dark-mode .navbar.scroll-hidden {
   box-shadow: none !important;
   backdrop-filter: none !important;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    border-radius: 9999px;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-right a {
+    font-size: 0.85rem;
+  }
+
+  .nav-left .logo {
+    height: 24px;
+  }
+
+  .mode-toggle,
+  .notify-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .theme-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
