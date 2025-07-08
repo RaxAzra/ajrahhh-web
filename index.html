@@ -27,20 +27,6 @@
   <link rel="icon" href="https://files.catbox.moe/gxci6m.png" type="image/x-icon" />
 </head>
 <body>
-  <div class="loader" style="
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    font-size: 18px;
-  ">
-    Loading ...
-  </div>
-
   <nav class="navbar scroll-hidden" id="mainNavbar">
     <div class="nav-content">
 
@@ -275,18 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
     css.rel = 'stylesheet';
     css.href = 'style.css?v=' + timestamp;
     document.head.appendChild(css);
-  </script>
-
-  <script>
-    window.addEventListener('load', () => {
-      const loader = document.querySelector('.loader');
-      if (loader) loader.style.display = 'none';
-    });
-  
-    setTimeout(() => {
-      const loader = document.querySelector('.loader');
-      if (loader) loader.style.display = 'none';
-    }, 5000);
   </script>
 </body>
 </html>
